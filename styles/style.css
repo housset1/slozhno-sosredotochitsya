@@ -380,7 +380,9 @@
 }
 
 @media (375px <= width < 768px) {
-  
+   .page  {
+    width: 375px;
+  }
   .decorated-dark {
     margin-inline-start: 340px;
   }
