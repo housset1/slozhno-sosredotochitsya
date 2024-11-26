@@ -2,41 +2,39 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
-  width: 1024px;
   max-width: 1024px;
   min-width: 375px;
   background-image: var(--bg-image);
+  background-color: var(--bg-color);
   background-position: center;
   background-size: 100%;
   background-attachment: fixed;
   font-family: var(--text-font);
-  overflow-x:hidden;
 }
 .header {
   display: grid;
-  grid-template-rows: repeat(auto-fit, 248px);
+  grid-template-rows: repeat(3, 1fr);
   width: 1024px;
-  height: 768px;
+  height: 100vh;
   font-weight: var(--text-weight);
   background-image: var(--bg-image);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  
 }
 .decorated-dark {
   display: var(--display);
   position: absolute;
+  top:6px;
   text-transform: uppercase;
   font-size: 18px;
   font-weight: 400;
   line-height: 25px;
   color: var(--accent-color);
   margin-inline-start: 943px;
-  margin-block-start: 6px;
-  
 }
-.decorated-dark + .neon-circle {
+.decorated-dark::after {
+  content: "";
   display: var(--display);
   position: absolute;
   width: 9px;
@@ -44,8 +42,8 @@
   border-radius: 100%;
   background-color:var(--accent-color);
   box-shadow: 0 0 4px 2px var(--accent-color);
-  margin-block-start: 15px;
-  margin-inline-start:982px ;
+  margin-block-start: 10px;
+  margin-inline-start:5px ;
 }
 .head-title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -56,7 +54,7 @@
 }
 .title-description {
   max-width: 491px;
-  height: 71px;
+  max-height: 71px;
   font-size: var(--text-size);
   line-height: var(--size-of-line);
   color: var(--text-color);
@@ -67,6 +65,7 @@
   background-color:var(--accent-color);
 }
 .pseudo_border {
+  top: 0;
   position: absolute;
   width: 25px;
   height: 25px;
@@ -81,7 +80,7 @@
 .bottom-left {
   border-block-end: 1px solid;
   border-inline-start: 1px solid;
-  margin-block-start: 710px;
+  margin-block-start: 790px;
   margin-inline-start: 14px;
 }
 .header__theme-menu-list {
@@ -95,31 +94,31 @@
 }
 .header__theme-menu-item {
   min-width: 70px;
-  height: 26px;
   color: var(--decor-color);
   padding-inline-start: 13px;
   padding-inline-end: 13px;
 }
 .header__theme-menu-button {
+  cursor: pointer;
   background-color: transparent;
   border: none;
 }
 .header__theme-menu-button_active {
   pointer-events: none;
   border: 1px solid var(--decor-color);
-
 }
 .header__theme-menu-button:hover {
   outline: 1px solid var(--hover-button);
 }
 .header__theme-menu-button:focus-visible {
   outline: none;
-  text-decoration: underline var(--decor-color);
+  border-bottom: 1px solid  var(--decor-color);
   text-underline-position: under;
 }
-
 .main_inform {
-  display: grid;
+ display: grid; 
+}
+.main_inform_section {
   grid-template-columns: 1fr 2fr;
   justify-content: space-around;
   margin-block-start: var(--left-margin);
@@ -127,8 +126,12 @@
   margin-inline-end: var(--right-margin);
   gap: 30px;
 }
+.main_inform_another-direction {
+  grid-template-rows:0.4fr 2fr;
+  width: 1024px;
+  margin-block-start: 70px; 
+}
 .main_different-indent {
-  display: grid;
   grid-template-columns: 1fr 2fr;
   margin-block-start: 26px;
   line-height: var(--size-of-line);
@@ -145,12 +148,12 @@
   color: var(--decor-color);
   margin-inline-start:var(--left-margin);
 }
-
 .main_table-item-title {
   font-weight: var(--text-weight);
   font-size: var(--text-size);
   color:var(--text-color);
   background-color: var(--accent-color);
+  margin-block-end: 20px;
 }
 .main_table-item-text {
   font-weight: var(--min-text-weight);
@@ -159,102 +162,86 @@
   margin-block-start: 10px;
   margin-block-end: 10px;
 }
+.main_table-item-text:last-child {
+  margin-block-end: 0;
+}
 .main_link-line {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color);
 }
 .main_link:hover {
   border-bottom: 1px solid var(--text-description-color);
-  
 }
 .main_link-line:focus-visible {
   outline: 1px solid var(--text-description-color);
 }
-.main_inform_another-direction {
-  display: grid;
-  grid-template-rows:0.4fr 2fr;
-  width: 1024px;
-  margin-block-start: 70px;
-  
-  
-}
 .main_table_another-direction {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 315px);
+  grid-template-columns: repeat(3, 1fr);
   margin-inline-start: var(--left-margin);
   margin-block-start: 20px;
   gap: 20px;
 }
-.main_table-item-title_resize {
-  
+.item-title_resize {
   font-weight: var(--min-text-weight);
   color: var(--text-color);
   background-color: var(--accent-color);
 }
 .set_images {
   margin-block-start: 70px;
-  
   padding-inline-start: 20px;
   padding-inline-end: 20px;
 }
 .image_direction {
- 
   display: grid;
   grid-template-columns: repeat(auto-fit, 314px);
-  grid-template-rows: repeat(auto-fit, 260px);
+  grid-template-rows: repeat(auto-fit, auto);
   grid-auto-flow: row;
   grid-template-areas:
-    "sunset sunset ice-cream"
-    "tape books ice-cream"
-    "tape street street";
-    gap: 20px;
-    padding-block-start: 20px;
+  "sunset sunset ice-cream"
+  "tape books ice-cream"
+  "tape street street";
+  gap: 20px;
+  padding-block-start: 20px;
 }
 .sunset { 
-	grid-area: sunset;
+  grid-area: sunset;
   background-image: url(../images/sunset.png);
   width: 649px;
   height: 260px;
   background-size: contain;
  }
-
 .ice-cream { 
-	grid-area: ice-cream;
+  grid-area: ice-cream;
   background-image: url(../images/ice-cream.png);
   width: 315px;
   height: 595px;
  }
-
 .tape { 
-	grid-area: tape;
+  grid-area: tape;
   background-image: url(../images/tape.png);
   width: 315px;
   height: 768px;
   background-size: cover;
  }
-
 .street { 
-	grid-area: street;
+  grid-area: street;
   background-image: url(../images/street.png);
   width: 649px;
   height: 428px;
- 
   background-size: contain;
  }
-
 .books { 
-	grid-area: books;
+  grid-area: books;
   background-image: url(../images/books.png);
   width: 315px;
   height: 315px;
   background-size: cover;
  }
  .image-position {
-  
   background-position: center;
   object-fit: contain;
  }
-
 .footer {
   display: grid;
   width: 1024px;
@@ -271,21 +258,13 @@
 }
 
 @media (768px <= width < 1024px) {
-  .page {
-    width: 768px;
-  }
-  .decorated-dark {
-    
-    margin-inline-start: 717px;
-    
-    
+   .decorated-dark {
+    margin-inline-start: 717px; 
   }
   .decorated-dark + .neon-circle {
-   
     margin-inline-start:760px ;
   }
   .top-right {
-   
     margin-inline-start: 753px;
   }
   .header__theme-menu-list {
@@ -302,12 +281,10 @@
     color: var(--text-color);
     margin-inline-start: 364px;
     margin-block-start: 52px;
-    
   }
   .main_inform {
     max-width: 768px;
     display: grid;
-    
     margin-block-start: var(--left-margin);
     line-height: var(--size-of-line);
     margin-inline-end: var(--right-margin);
@@ -336,17 +313,16 @@
     width: 808px;
   }
   .image_direction {
- 
     display: grid;
     grid-template-columns: repeat(auto-fit, 250px);
     grid-template-rows: repeat(auto-fit, 190px);
     grid-auto-flow: row;
     grid-template-areas:
-      "sunset sunset ice-cream"
-      "tape books ice-cream"
-      "tape street street";
-      gap: 20px;
-      padding-block-start: 20px;
+    "sunset sunset ice-cream"
+    "tape books ice-cream"
+    "tape street street";
+    gap: 20px;
+    padding-block-start: 20px;
   }
   .sunset {  
     width: 519px;
@@ -379,10 +355,7 @@
    }
 }
 
-@media (375px <= width < 768px) {
-   .page  {
-    width: 375px;
-  }
+@media ( width < 768px) {
   .decorated-dark {
     margin-inline-start: 340px;
   }
@@ -390,7 +363,6 @@
     margin-inline-start:380px ;
   }
   .top-right {
-   
     margin-inline-start: 370px;
   }
   .header__theme-menu-list {
@@ -411,7 +383,6 @@
     color: var(--text-color);
     margin-inline-start: 10px;
     margin-block-start: 52px;
-    
   }
   .section_title {
     margin-inline-start: 0px;
@@ -439,7 +410,6 @@
   }
   .main_inform_another-direction {
     max-width: 375px;
-    max-height: 1119px;
     margin-inline-start: 10px;
   }
   .main_table_another-direction {
@@ -452,18 +422,16 @@
   }
   .set_images {
     width: 375px;
-    height:1400px;
     padding-inline-start: 10px;
   }
   .main_table-item-title {
     min-width: 375px;
   }
   .image_direction {
- 
     display: flex;
     flex-direction: column;
-      gap: 10px;
-      padding-block-start: 10px;
+    gap: 10px;
+    padding-block-start: 10px;
   }
   .sunset {  
     width: 375px;
@@ -486,7 +454,6 @@
   .books { 
     width: 375px;
     height: 375px;
-    
    }
    .footer {
     width: 375px;
