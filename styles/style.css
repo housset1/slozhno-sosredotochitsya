@@ -13,8 +13,8 @@
 }
 .header {
   display: grid;
+  position: relative;
   grid-template-rows: repeat(3, 1fr);
-  width: 1024px;
   height: 100vh;
   font-weight: var(--text-weight);
   background-image: var(--bg-image);
@@ -36,7 +36,6 @@
 .decorated-dark::after {
   content: "";
   display: var(--display);
-  position: absolute;
   width: 9px;
   height: 9px;
   border-radius: 100%;
@@ -74,18 +73,22 @@
 .top-right {
   border-block-start: 1px solid;
   border-inline-end: 1px solid;
-  margin-block-start: 7px;
-  margin-inline-start: 973px;
+  top: 7px;
+  left: 973px;
 }
 .bottom-left {
   border-block-end: 1px solid;
   border-inline-start: 1px solid;
-  margin-block-start: 790px;
-  margin-inline-start: 14px;
+  top: 790px;
+  left: 14px;
+}
+.header__theme-menu {
+  display: flex;
+  justify-self: center;
+  height: 200px;
 }
 .header__theme-menu-list {
   display: flex;
-  margin-inline-start: 384px;
   margin-block-start: 7px;
   font-weight: var(--min-text-weight);
   font-size: var(--text-size);
@@ -202,37 +205,36 @@
   "tape books ice-cream"
   "tape street street";
   gap: 20px;
-  padding-block-start: 20px;
 }
 .sunset { 
-  grid-area: sunset;
+	grid-area: sunset;
   background-image: url(../images/sunset.png);
   width: 649px;
   height: 260px;
   background-size: contain;
  }
 .ice-cream { 
-  grid-area: ice-cream;
+	grid-area: ice-cream;
   background-image: url(../images/ice-cream.png);
   width: 315px;
   height: 595px;
  }
 .tape { 
-  grid-area: tape;
+	grid-area: tape;
   background-image: url(../images/tape.png);
   width: 315px;
   height: 768px;
   background-size: cover;
  }
 .street { 
-  grid-area: street;
+	grid-area: street;
   background-image: url(../images/street.png);
   width: 649px;
   height: 428px;
   background-size: contain;
  }
 .books { 
-  grid-area: books;
+	grid-area: books;
   background-image: url(../images/books.png);
   width: 315px;
   height: 315px;
@@ -244,8 +246,9 @@
  }
 .footer {
   display: grid;
+  position: relative;
   width: 1024px;
-  height: 768px;
+  min-height: 768px;
   margin-block-start: 50px;
 }
 .footer-title {
@@ -265,7 +268,7 @@
     margin-inline-start:760px ;
   }
   .top-right {
-    margin-inline-start: 753px;
+    left: 753px;
   }
   .header__theme-menu-list {
     display: grid;
@@ -290,17 +293,8 @@
     margin-inline-end: var(--right-margin);
     gap: 30px;
   }
-  .main_different-indent {
-    display: grid;
-    max-width: 786px;
-    grid-template-columns: 1fr 2fr;
-    margin-block-start: 26px;
-    line-height: var(--size-of-line);
-    margin-inline-end: var(--right-margin);
-    gap: 30px;
-  }
   .main_inform_another-direction {
-    max-width: 768px;
+    margin-block-start: 50px;
   }
   .main_table_another-direction {
     display: flex;
@@ -345,7 +339,6 @@
   .books { 
     width: 250px;
     height: 250px;
-    
    }
    .footer {
     width: 786px;
@@ -363,12 +356,11 @@
     margin-inline-start:380px ;
   }
   .top-right {
-    margin-inline-start: 370px;
+    left: 370px;
   }
   .header__theme-menu-list {
     display: grid;
     width: 100px;
-    margin-inline-start: 310px;
     margin-inline-end: 20px;
     margin-block-start: 72px;
   }
@@ -397,20 +389,6 @@
     margin-inline-end: var(--right-margin);
     margin-inline-start: 10px;
     gap: 30px;
-  }
-  .main_different-indent {
-    display: flex;
-    flex-direction: column;
-    max-width: 375px;
-    margin-block-start: 26px;
-    line-height: var(--size-of-line);
-    margin-inline-end: var(--right-margin);
-    margin-inline-start: 10px;
-    gap: 30px;
-  }
-  .main_inform_another-direction {
-    max-width: 375px;
-    margin-inline-start: 10px;
   }
   .main_table_another-direction {
     display: flex;
@@ -454,6 +432,7 @@
   .books { 
     width: 375px;
     height: 375px;
+    
    }
    .footer {
     width: 375px;
