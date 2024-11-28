@@ -79,8 +79,8 @@
 .bottom-left {
   border-block-end: 1px solid;
   border-inline-start: 1px solid;
-  top: 790px;
-  left: 14px;
+  top: initial;
+  bottom: 14px;
 }
 .header__theme-menu {
   display: flex;
@@ -143,7 +143,7 @@
 }
 .main_table {
   display: grid;
-  gap: 12px;
+  gap: 20px;
 }
 .section_title {
   font-weight: var(--text-weight);
@@ -207,34 +207,34 @@
   gap: 20px;
 }
 .sunset { 
-	grid-area: sunset;
+  grid-area: sunset;
   background-image: url(../images/sunset.png);
   width: 649px;
   height: 260px;
   background-size: contain;
  }
 .ice-cream { 
-	grid-area: ice-cream;
+  grid-area: ice-cream;
   background-image: url(../images/ice-cream.png);
   width: 315px;
   height: 595px;
  }
 .tape { 
-	grid-area: tape;
+  grid-area: tape;
   background-image: url(../images/tape.png);
   width: 315px;
   height: 768px;
   background-size: cover;
  }
 .street { 
-	grid-area: street;
+  grid-area: street;
   background-image: url(../images/street.png);
   width: 649px;
   height: 428px;
   background-size: contain;
  }
 .books { 
-	grid-area: books;
+  grid-area: books;
   background-image: url(../images/books.png);
   width: 315px;
   height: 315px;
@@ -270,6 +270,9 @@
   .top-right {
     left: 753px;
   }
+  .header__theme-menu {
+    margin-inline-start: 220px;
+  }
   .header__theme-menu-list {
     display: grid;
     margin-inline-start: 470px;
@@ -294,7 +297,7 @@
     gap: 30px;
   }
   .main_inform_another-direction {
-    margin-block-start: 50px;
+    margin-block-start: 80px;
   }
   .main_table_another-direction {
     display: flex;
@@ -358,6 +361,9 @@
   .top-right {
     left: 370px;
   }
+  .header__theme-menu {
+    margin-inline-start: 320px;
+  }
   .header__theme-menu-list {
     display: grid;
     width: 100px;
@@ -374,7 +380,7 @@
     line-height: var(--size-of-line);
     color: var(--text-color);
     margin-inline-start: 10px;
-    margin-block-start: 52px;
+    margin-block-start: 52px; 
   }
   .section_title {
     margin-inline-start: 0px;
@@ -388,6 +394,7 @@
     line-height: var(--size-of-line);
     margin-inline-end: var(--right-margin);
     margin-inline-start: 10px;
+    margin-block-start: 50px;
     gap: 30px;
   }
   .main_table_another-direction {
@@ -406,6 +413,7 @@
     min-width: 375px;
   }
   .image_direction {
+ 
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -432,7 +440,6 @@
   .books { 
     width: 375px;
     height: 375px;
-    
    }
    .footer {
     width: 375px;
