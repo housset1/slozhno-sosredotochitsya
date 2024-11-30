@@ -85,7 +85,6 @@
 .header__theme-menu {
   display: flex;
   justify-self: center;
-  height: 200px;
 }
 .header__theme-menu-list {
   display: flex;
@@ -207,34 +206,34 @@
   gap: 20px;
 }
 .sunset { 
-  grid-area: sunset;
+	grid-area: sunset;
   background-image: url(../images/sunset.png);
   width: 649px;
   height: 260px;
   background-size: contain;
  }
 .ice-cream { 
-  grid-area: ice-cream;
+	grid-area: ice-cream;
   background-image: url(../images/ice-cream.png);
   width: 315px;
   height: 595px;
  }
 .tape { 
-  grid-area: tape;
+	grid-area: tape;
   background-image: url(../images/tape.png);
   width: 315px;
   height: 768px;
   background-size: cover;
  }
 .street { 
-  grid-area: street;
+	grid-area: street;
   background-image: url(../images/street.png);
   width: 649px;
   height: 428px;
   background-size: contain;
  }
 .books { 
-  grid-area: books;
+	grid-area: books;
   background-image: url(../images/books.png);
   width: 315px;
   height: 315px;
@@ -262,16 +261,19 @@
 
 @media (768px <= width < 1024px) {
    .decorated-dark {
-    margin-inline-start: 717px; 
+    margin-inline-start: 687px; 
   }
   .decorated-dark + .neon-circle {
     margin-inline-start:760px ;
   }
   .top-right {
-    left: 753px;
+    left: 713px;
   }
   .header__theme-menu {
-    margin-inline-start: 220px;
+    margin-inline-start: 190px;
+  }
+  .head-title {
+    max-width: 758px;
   }
   .header__theme-menu-list {
     display: grid;
@@ -285,7 +287,7 @@
     font-size: var(--text-size);
     line-height: var(--size-of-line);
     color: var(--text-color);
-    margin-inline-start: 364px;
+    margin-inline-start: 344px;
     margin-block-start: 52px;
   }
   .main_inform {
@@ -294,10 +296,13 @@
     margin-block-start: var(--left-margin);
     line-height: var(--size-of-line);
     margin-inline-end: var(--right-margin);
-    gap: 30px;
+    gap: 0px;
   }
   .main_inform_another-direction {
     margin-block-start: 80px;
+    max-width: 758px;
+    grid-template-rows:2fr;
+    margin-block-end: 80px;
   }
   .main_table_another-direction {
     display: flex;
@@ -307,7 +312,8 @@
     gap: 20px;
   }
   .set_images {
-    width: 808px;
+    width: 768px;
+    padding-inline-start: 0px;
   }
   .image_direction {
     display: grid;
@@ -353,36 +359,37 @@
 
 @media ( width < 768px) {
   .decorated-dark {
-    margin-inline-start: 340px;
+    margin-inline-start: 305px;
   }
   .decorated-dark + .neon-circle {
     margin-inline-start:380px ;
   }
   .top-right {
-    left: 370px;
+    left: 330px;
   }
   .header__theme-menu {
-    margin-inline-start: 320px;
+    margin-inline-start: 250px;
+    height: 200px;
   }
   .header__theme-menu-list {
     display: grid;
     width: 100px;
-    margin-inline-end: 20px;
     margin-block-start: 72px;
   }
   .head-title {
     max-width: 355px ;
   }
   .title-description {
-    max-width: 370px;
+    max-width: 350px;
     min-height: 100px;
     font-size: var(--text-size);
     line-height: var(--size-of-line);
     color: var(--text-color);
     margin-inline-start: 10px;
-    margin-block-start: 52px; 
+    margin-block-start: 52px;
   }
   .section_title {
+    max-width: 345px;
     margin-inline-start: 0px;
     margin-inline-end: var(--right-margin);
   }
@@ -405,12 +412,15 @@
     margin-inline-start: 0;
     gap: 20px;
   }
+  .main_table-item {
+    max-width: 345px;
+  }
   .set_images {
     width: 375px;
     padding-inline-start: 10px;
   }
   .main_table-item-title {
-    min-width: 375px;
+    min-width: 345px;
   }
   .image_direction {
  
@@ -420,26 +430,26 @@
     padding-block-start: 10px;
   }
   .sunset {  
-    width: 375px;
+    width: 345px;
     height: 142px;
     background-size: cover;
    }
   .ice-cream { 
-    width: 375px;
-    height: 375px;
+    width: 345px;
+    height: 345px;
    }
   .tape { 
-    width: 375px;
+    width: 345px;
     height: 237px;
    }
   .street { 
-    width: 375px;
+    width: 345px;
     height: 237px;
     background-size: contain;
    }
   .books { 
-    width: 375px;
-    height: 375px;
+    width: 345px;
+    height: 345px;
    }
    .footer {
     width: 375px;
