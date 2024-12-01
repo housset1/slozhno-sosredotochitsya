@@ -1,5 +1,4 @@
 /* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   max-width: 1024px;
@@ -108,6 +107,7 @@
 .header__theme-menu-button_active {
   pointer-events: none;
   border: 1px solid var(--decor-color);
+
 }
 .header__theme-menu-button:hover {
   outline: 1px solid var(--hover-button);
@@ -177,6 +177,7 @@
 .main_link-line:focus-visible {
   outline: 1px solid var(--text-description-color);
 }
+
 .main_table_another-direction {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -185,6 +186,7 @@
   gap: 20px;
 }
 .item-title_resize {
+  
   font-weight: var(--min-text-weight);
   color: var(--text-color);
   background-color: var(--accent-color);
@@ -271,6 +273,7 @@
   }
   .header__theme-menu {
     margin-inline-start: 190px;
+    height: 320px;
   }
   .head-title {
     max-width: 758px;
@@ -359,16 +362,17 @@
 
 @media ( width < 768px) {
   .decorated-dark {
-    margin-inline-start: 305px;
+    margin-inline-start: 295px;
   }
   .decorated-dark + .neon-circle {
     margin-inline-start:380px ;
   }
   .top-right {
-    left: 330px;
+   
+    left: 320px;
   }
   .header__theme-menu {
-    margin-inline-start: 250px;
+    margin-inline-start: 230px;
     height: 200px;
   }
   .header__theme-menu-list {
@@ -377,10 +381,10 @@
     margin-block-start: 72px;
   }
   .head-title {
-    max-width: 355px ;
+    max-width: 345px ;
   }
   .title-description {
-    max-width: 350px;
+    max-width: 340px;
     min-height: 100px;
     font-size: var(--text-size);
     line-height: var(--size-of-line);
@@ -389,12 +393,12 @@
     margin-block-start: 52px;
   }
   .section_title {
-    max-width: 345px;
+    max-width: 335px;
     margin-inline-start: 0px;
     margin-inline-end: var(--right-margin);
   }
   .main_inform {
-    max-width: 375px;
+    max-width: 355px;
     display: flex;
     flex-direction: column;
     margin-block-start: var(--left-margin);
@@ -413,48 +417,48 @@
     gap: 20px;
   }
   .main_table-item {
-    max-width: 345px;
+    max-width: 335px;
   }
   .set_images {
     width: 375px;
     padding-inline-start: 10px;
   }
   .main_table-item-title {
-    min-width: 345px;
+    min-width: 335px;
   }
   .image_direction {
- 
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding-block-start: 10px;
   }
   .sunset {  
-    width: 345px;
+    width: 335px;
     height: 142px;
     background-size: cover;
    }
   .ice-cream { 
-    width: 345px;
-    height: 345px;
+    width: 335px;
+    height: 335px;
    }
   .tape { 
-    width: 345px;
+    width: 335px;
     height: 237px;
    }
   .street { 
-    width: 345px;
+    width: 335px;
     height: 237px;
     background-size: contain;
    }
   .books { 
-    width: 345px;
-    height: 345px;
+    width: 335px;
+    height: 335px;
    }
    .footer {
-    width: 375px;
+    width: 365px;
    }
    .footer-title {
+    max-width: 355px;
     align-self: center;
    }
 }
